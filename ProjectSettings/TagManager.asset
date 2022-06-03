@@ -3,7 +3,13 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Enemy
+  - OrdagaExplosionTrigger
+  - EnemyShield
+  - BossEnemy
+  - EnemyBullet
+  - Button
   layers:
   - Default
   - TransparentFX
@@ -13,12 +19,12 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Player
+  - PlayerBullets
+  - EnemyBullet
+  - Enemy
+  - UpgradeSlot
+  - UpgradeCard
   - 
   - 
   - 

@@ -1,0 +1,11 @@
+waveCount=8
+waveIntervals=5,8,9,9,8,9,10,9
+dialogueCount=0
+
+dialogueStart:
+interval=0
+<<<
+
+>>>
+dialogueEnd:
+

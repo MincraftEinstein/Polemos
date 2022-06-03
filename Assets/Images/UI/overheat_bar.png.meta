@@ -1,0 +1,851 @@
+fileFormatVersion: 2
+guid: 6d9adfe9817873843baafd5507ccf7e2
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -8968299138258521225
+    second: Overheat_Bar_0
+  - first:
+      213: 7551043254583845746
+    second: Overheat_Bar_1
+  - first:
+      213: 7989988704238006954
+    second: Overheat_Bar_2
+  - first:
+      213: 4457593982104580519
+    second: Overheat_Bar_3
+  - first:
+      213: -7517909409767769406
+    second: Overheat_Bar_4
+  - first:
+      213: 3120736492800959703
+    second: Overheat_Bar_5
+  - first:
+      213: 1987624177182971574
+    second: Overheat_Bar_6
+  - first:
+      213: 8412888689040046537
+    second: Overheat_Bar_7
+  - first:
+      213: 6284449735354801866
+    second: Overheat_Bar_8
+  - first:
+      213: 2076153967861906592
+    second: Overheat_Bar_13
+  - first:
+      213: -917003982930386886
+    second: Overheat_Bar_14
+  - first:
+      213: 377411510454738676
+    second: Overheat_Bar_15
+  - first:
+      213: 5561589960036194651
+    second: Overheat_Bar_16
+  - first:
+      213: -6915443322747879884
+    second: Overheat_Bar_17
+  - first:
+      213: 5741179476473161496
+    second: Overheat_Bar_18
+  - first:
+      213: -785894184116271329
+    second: Overheat_Bar_19
+  - first:
+      213: -7089692163874764125
+    second: Overheat_Bar_20
+  - first:
+      213: 5987089236044222059
+    second: Overheat_Bar_21
+  - first:
+      213: -1166517031343363957
+    second: Overheat_Bar_25
+  - first:
+      213: 9010255506059535216
+    second: Overheat_Bar_26
+  - first:
+      213: -6991136054094469189
+    second: Overheat_Bar_27
+  - first:
+      213: 9116984024104893082
+    second: Overheat_Bar_28
+  - first:
+      213: -6809570042729921834
+    second: Overheat_Bar_29
+  - first:
+      213: 9170831470615742100
+    second: Overheat_Bar_30
+  - first:
+      213: 1049454263193107735
+    second: Overheat_Bar_31
+  - first:
+      213: 517394025734270882
+    second: Overheat_Bar_32
+  - first:
+      213: 3925210047425096371
+    second: Overheat_Bar_33
+  - first:
+      213: 4192333264592992688
+    second: Overheat_Bar_34
+  - first:
+      213: 3669703431172291903
+    second: Overheat_Bar_35
+  - first:
+      213: 264843037499238082
+    second: overheat_bar_0
+  - first:
+      213: -4390839949136601469
+    second: overheat_bar_1
+  - first:
+      213: -1492078098988652061
+    second: overheat_bar_2
+  - first:
+      213: -1991214706518519981
+    second: overheat_bar_3
+  - first:
+      213: 8727591262610047671
+    second: overheat_bar_4
+  - first:
+      213: 9025085065642143748
+    second: overheat_bar_5
+  - first:
+      213: -3088636397556847799
+    second: overheat_bar_6
+  - first:
+      213: -6985900711376537315
+    second: overheat_bar_7
+  - first:
+      213: 3781088503774149692
+    second: overheat_bar_8
+  - first:
+      213: 4194652323437226234
+    second: overheat_bar_13
+  - first:
+      213: -3204545529042577927
+    second: overheat_bar_14
+  - first:
+      213: 7291435797118815319
+    second: overheat_bar_15
+  - first:
+      213: -774532258304671762
+    second: overheat_bar_16
+  - first:
+      213: 8754155454189871477
+    second: overheat_bar_17
+  - first:
+      213: -8193071208162117428
+    second: overheat_bar_18
+  - first:
+      213: -7310446336271118500
+    second: overheat_bar_19
+  - first:
+      213: 3090143603578417673
+    second: overheat_bar_20
+  - first:
+      213: 2222069125682443625
+    second: overheat_bar_21
+  - first:
+      213: -7687609987494465623
+    second: overheat_bar_25
+  - first:
+      213: -2456759912788277074
+    second: overheat_bar_26
+  - first:
+      213: -3206157808563886810
+    second: overheat_bar_27
+  - first:
+      213: -3362189211017338354
+    second: overheat_bar_28
+  - first:
+      213: 7837427704877239533
+    second: overheat_bar_29
+  - first:
+      213: -4282917186507083006
+    second: overheat_bar_30
+  - first:
+      213: 5544818601708991434
+    second: overheat_bar_31
+  - first:
+      213: -5125770648673746729
+    second: overheat_bar_32
+  - first:
+      213: -6436050292777319593
+    second: overheat_bar_33
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: overheat_bar_0
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 62
+        width: 44
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c6a063e659eca300800000000000000
+      internalID: 264843037499238082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: overheat_bar_1
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 62
+        width: 44
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38e5e16745a9013c0800000000000000
+      internalID: -4390839949136601469
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: overheat_bar_2
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 62
+        width: 44
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e924a4dfd21b4be0800000000000000
+      internalID: -1492078098988652061
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: overheat_bar_3
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 62
+        width: 44
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35f0e6a36c8cd54e0800000000000000
+      internalID: -1991214706518519981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: overheat_bar_4
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 62
+        width: 44
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b2cca83302ae1970800000000000000
+      internalID: 8727591262610047671
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: overheat_bar_5
+      rect:
+        serializedVersion: 2
+        x: 348
+        y: 62
+        width: 44
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 400784ddc0b8f3d70800000000000000
+      internalID: 9025085065642143748
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: overheat_bar_6
+      rect:
+        serializedVersion: 2
+        x: 396
+        y: 62
+        width: 44
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94b284b8f85f225d0800000000000000
+      internalID: -3088636397556847799
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: overheat_bar_7
+      rect:
+        serializedVersion: 2
+        x: 444
+        y: 62
+        width: 44
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d19b04ed0581d0f90800000000000000
+      internalID: -6985900711376537315
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: overheat_bar_8
+      rect:
+        serializedVersion: 2
+        x: 492
+        y: 62
+        width: 44
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3c75cb06ff197430800000000000000
+      internalID: 3781088503774149692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: overheat_bar_13
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 44
+        width: 34
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af82ebe5016663a30800000000000000
+      internalID: 4194652323437226234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: overheat_bar_14
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 44
+        width: 34
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f5d9dad1da2783d0800000000000000
+      internalID: -3204545529042577927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: overheat_bar_15
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 44
+        width: 34
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75c85ddc932603560800000000000000
+      internalID: 7291435797118815319
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: overheat_bar_16
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 44
+        width: 34
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eef3ba4c30f4045f0800000000000000
+      internalID: -774532258304671762
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: overheat_bar_17
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 44
+        width: 34
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 571298b01020d7970800000000000000
+      internalID: 8754155454189871477
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: overheat_bar_18
+      rect:
+        serializedVersion: 2
+        x: 348
+        y: 44
+        width: 34
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc8340a152d5c4e80800000000000000
+      internalID: -8193071208162117428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: overheat_bar_19
+      rect:
+        serializedVersion: 2
+        x: 396
+        y: 44
+        width: 34
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5f01012ac31c8a90800000000000000
+      internalID: -7310446336271118500
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: overheat_bar_20
+      rect:
+        serializedVersion: 2
+        x: 444
+        y: 44
+        width: 34
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 902bc343c3562ea20800000000000000
+      internalID: 3090143603578417673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: overheat_bar_21
+      rect:
+        serializedVersion: 2
+        x: 492
+        y: 44
+        width: 34
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9653aa6c81066de10800000000000000
+      internalID: 2222069125682443625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: overheat_bar_25
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 26
+        width: 26
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9afa5a3727f105590800000000000000
+      internalID: -7687609987494465623
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: overheat_bar_26
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 26
+        width: 26
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea8c5d330e5d7edd0800000000000000
+      internalID: -2456759912788277074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: overheat_bar_27
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 26
+        width: 26
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62564b6c5707183d0800000000000000
+      internalID: -3206157808563886810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: overheat_bar_28
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 26
+        width: 26
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0229a9e9ba1751d0800000000000000
+      internalID: -3362189211017338354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: overheat_bar_29
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 26
+        width: 26
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dec430e19f224cc60800000000000000
+      internalID: 7837427704877239533
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: overheat_bar_30
+      rect:
+        serializedVersion: 2
+        x: 348
+        y: 26
+        width: 26
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20374dfb2850094c0800000000000000
+      internalID: -4282917186507083006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: overheat_bar_31
+      rect:
+        serializedVersion: 2
+        x: 396
+        y: 26
+        width: 26
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac3b7daf32723fc40800000000000000
+      internalID: 5544818601708991434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: overheat_bar_32
+      rect:
+        serializedVersion: 2
+        x: 444
+        y: 26
+        width: 26
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d08da5a0ca9dd8b0800000000000000
+      internalID: -5125770648673746729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: overheat_bar_33
+      rect:
+        serializedVersion: 2
+        x: 492
+        y: 26
+        width: 26
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 753857ebb5e8ea6a0800000000000000
+      internalID: -6436050292777319593
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

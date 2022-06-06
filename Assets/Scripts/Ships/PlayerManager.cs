@@ -21,9 +21,9 @@ public class PlayerManager : BaseShip
     private bool isShieldRecharging;
     private float xSpeed = 0;
     private float ySpeed = 0;
-    private float maxSpeed = 500;
-    private float acceleration = 500;
-    private float deceleration = 500;
+    private float maxSpeed = 50;
+    private float acceleration = 20;
+    private float deceleration = 20;
     private int healthLevel = 0;
     private int regenerationLevel = 0;
     private int damage = 1;
@@ -47,23 +47,23 @@ public class PlayerManager : BaseShip
         if (gameManager.gameStarted && gameManager.gameOver == false && gameManager.gamePaused == false)
         {
 
-            if ((Input.GetKey(KeyCode.A)) && (xSpeed < maxSpeed))
+            if (Input.GetKey(KeyCode.A) && (xSpeed < maxSpeed))
             {
-                xSpeed = xSpeed - acceleration * Time.deltaTime;
+                xSpeed -= acceleration * Time.deltaTime;
             }
-            else if ((Input.GetKey(KeyCode.D)) && (xSpeed > -maxSpeed))
+            else if (Input.GetKey(KeyCode.D) && (xSpeed > -maxSpeed))
             {
-                xSpeed = xSpeed + acceleration * Time.deltaTime;
+                xSpeed += acceleration * Time.deltaTime;
             }
             else
             {
                 if (xSpeed > deceleration * Time.deltaTime)
                 {
-                    xSpeed = xSpeed - deceleration * Time.deltaTime;
+                    xSpeed -= deceleration * Time.deltaTime;
                 }
                 else if (xSpeed < -deceleration * Time.deltaTime)
                 {
-                    xSpeed = xSpeed + deceleration * Time.deltaTime;
+                    xSpeed += deceleration * Time.deltaTime;
                 }
                 else
                 {
@@ -71,23 +71,23 @@ public class PlayerManager : BaseShip
                 }
             }
 
-            if ((Input.GetKey(KeyCode.S)) && (ySpeed < maxSpeed))
+            if (Input.GetKey(KeyCode.S) && (ySpeed < maxSpeed))
             {
-                ySpeed = ySpeed - acceleration * Time.deltaTime;
+                ySpeed -= acceleration * Time.deltaTime;
             }
-            else if ((Input.GetKey(KeyCode.W)) && (ySpeed > -maxSpeed))
+            else if (Input.GetKey(KeyCode.W) && (ySpeed > -maxSpeed))
             {
-                ySpeed = ySpeed + acceleration * Time.deltaTime;
+                ySpeed += acceleration * Time.deltaTime;
             }
             else
             {
                 if (ySpeed > deceleration * Time.deltaTime)
                 {
-                    ySpeed = ySpeed - deceleration * Time.deltaTime;
+                    ySpeed -= deceleration * Time.deltaTime;
                 }
                 else if (ySpeed < -deceleration * Time.deltaTime)
                 {
-                    ySpeed = ySpeed + deceleration * Time.deltaTime;
+                    ySpeed += deceleration * Time.deltaTime;
                 }
                 else
                 {
@@ -122,31 +122,39 @@ public class PlayerManager : BaseShip
             }
         }
 
-        RectTransform playerRect = (RectTransform)transform;
-        float sizeX = playerRect.rect.width / 2;
-        float sizeY = playerRect.rect.height / 2;
+        Vector3 BGSize = gameManager.backgroundsFolder.GetComponent<BoxCollider2D>().size;
+        float BGHalfX = BGSize.x / 2;
+        float BGHalfY = BGSize.y / 2;
 
-        if ((transform.position.x + sizeX) > (backgroundRect.rect.width / 2))
+        Vector3 playerSize = GetComponent<BoxCollider2D>().size;
+        float PlayerHalfX = (playerSize.x / 2) + 0.1F;
+        float PlayerHalfY = (playerSize.y / 2) + 0.1F;
+
+        // Right/Center Bound
+        if ((transform.position.x + PlayerHalfX) > 0)
         {
-            transform.position = new Vector2(((backgroundRect.rect.width / 2) - sizeX), transform.position.y);
+            transform.position = new Vector2(-PlayerHalfX, transform.position.y);
             xSpeed = 0;
         }
 
-        if ((transform.position.y + sizeY) > backgroundRect.rect.height)
+        // Left Bound
+        if ((transform.position.x - PlayerHalfX) < -BGHalfX)
         {
-            transform.position = new Vector2(transform.position.x, (backgroundRect.rect.height - sizeY));
+            transform.position = new Vector2(-BGHalfX + PlayerHalfX, transform.position.y);
+            xSpeed = 0;
+        }
+
+        // Top Bound
+        if ((transform.position.y + PlayerHalfY) > BGHalfY)
+        {
+            transform.position = new Vector2(transform.position.x, BGHalfY - PlayerHalfY);
             ySpeed = 0;
         }
 
-        if ((transform.position.x - sizeX) < 0)
+        // Bottom Bound
+        if ((transform.position.y - PlayerHalfY) < -BGHalfY)
         {
-            transform.position = new Vector2((0 + sizeX), transform.position.y);
-            xSpeed = 0;
-        }
-
-        if ((transform.position.y - sizeY) < 0)
-        {
-            transform.position = new Vector2(transform.position.x, (0 + sizeY));
+            transform.position = new Vector2(transform.position.x, -BGHalfY + PlayerHalfY);
             ySpeed = 0;
         }
     }

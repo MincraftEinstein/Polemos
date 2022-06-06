@@ -17,7 +17,7 @@ public class BaseBullet : MonoBehaviour
 
     void Start()
     {
-        bulletRect = (RectTransform)transform;
+        //bulletRect = (RectTransform)transform;
         gameManager = Resources.FindObjectsOfTypeAll<GameManager>()[0];
         player = gameManager.player;
         backgroundRect = gameManager.backgroundRect;
@@ -34,25 +34,25 @@ public class BaseBullet : MonoBehaviour
             transform.Translate(Vector2.left * Time.deltaTime * speed);
         }
 
-        if (transform.position.x > (backgroundRect.rect.width + bulletRect.rect.width))
-        {
-            Destroy(gameObject);
-        }
+        //if (transform.position.x > (backgroundRect.rect.width + bulletRect.rect.width))
+        //{
+        //    Destroy(gameObject);
+        //}
 
-        if (transform.position.y > (backgroundRect.rect.height + bulletRect.rect.width))
-        {
-            Destroy(gameObject);
-        }
+        //if (transform.position.y > (backgroundRect.rect.height + bulletRect.rect.width))
+        //{
+        //    Destroy(gameObject);
+        //}
 
-        if (transform.position.x < -bulletRect.rect.width)
-        {
-            Destroy(gameObject);
-        }
+        //if (transform.position.x < -bulletRect.rect.width)
+        //{
+        //    Destroy(gameObject);
+        //}
 
-        if (transform.position.y < -bulletRect.rect.width)
-        {
-            Destroy(gameObject);
-        }
+        //if (transform.position.y < -bulletRect.rect.width)
+        //{
+        //    Destroy(gameObject);
+        //}
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

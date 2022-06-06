@@ -64,7 +64,7 @@ public class GameManager : MonoBehaviour
     private List<GameObject> enemyCount = new List<GameObject>();
     private bool canPlayOverheatSound = true;
     private bool playerWon;
-    private bool isFinalWave;
+    private bool isFinalLevel;
     private Texture2D levelMap;
     private readonly string levelPath = Application.streamingAssetsPath + "/Levels/level_" + Constants.levelsUnlocked;
 
@@ -80,16 +80,16 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         print("Loading level " + Constants.levelsUnlocked);
-        backgroundRect = (RectTransform)backgroundsFolder.transform;
+        backgroundRect = new RectTransform();
         HUDElements = HUD.GetComponentsInChildren<Transform>();
         startMenu.transform.GetChild(0).GetChild(0).GetComponent<Text>().text = "Level " + Constants.levelsUnlocked;
         StartCoroutine(Overheat());
         Instantiate(backgroundPrefab, backgroundsFolder.transform.position, transform.rotation, backgroundsFolder.transform);
         Cursor.SetCursor(cursor, Vector3.zero, CursorMode.ForceSoftware);
-        audioSource = canvas.GetComponent<AudioSource>();
+        audioSource = GetComponent<AudioSource>();
         audioSource.volume = PlayerPrefs.GetFloat(Constants.Prefs.soundVolume);
         ReadLevelProperties();
-        var rawImage = File.ReadAllBytes(levelPath + ".png");
+        byte[] rawImage = File.ReadAllBytes(levelPath + ".png");
         levelMap = new Texture2D(2, 2);
         levelMap.LoadImage(rawImage);
     }
@@ -203,7 +203,7 @@ public class GameManager : MonoBehaviour
                     wave++;
                     if (wave > (waveCount - 1))
                     {
-                        isFinalWave = true;
+                        isFinalLevel = true;
                     }
                 }
                 else
@@ -397,7 +397,7 @@ public class GameManager : MonoBehaviour
             if (!enemy.CompareTag("BossEnemy"))
             {
                 enemyCount.Remove(enemy);
-                if (isFinalWave && enemyCount.Count <= 0)
+                if (isFinalLevel && enemyCount.Count <= 0)
                 {
                     playerWon = true;
                     EndGame();

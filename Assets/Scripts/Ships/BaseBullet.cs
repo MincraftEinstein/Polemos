@@ -11,16 +11,10 @@ public class BaseBullet : MonoBehaviour
     public Directions dirction;
 
     private GameManager gameManager;
-    private GameObject player;
-    private RectTransform backgroundRect;
-    private RectTransform bulletRect;
 
     void Start()
     {
-        //bulletRect = (RectTransform)transform;
         gameManager = Resources.FindObjectsOfTypeAll<GameManager>()[0];
-        player = gameManager.player;
-        backgroundRect = gameManager.backgroundRect;
     }
 
     void Update()
@@ -34,25 +28,37 @@ public class BaseBullet : MonoBehaviour
             transform.Translate(Vector2.left * Time.deltaTime * speed);
         }
 
-        //if (transform.position.x > (backgroundRect.rect.width + bulletRect.rect.width))
-        //{
-        //    Destroy(gameObject);
-        //}
+        Vector2 BGSize = gameManager.backgroundsFolder.GetComponent<BoxCollider2D>().size;
+        float xBGHalf = BGSize.x / 2;
+        float yBGHalf = BGSize.y / 2;
 
-        //if (transform.position.y > (backgroundRect.rect.height + bulletRect.rect.width))
-        //{
-        //    Destroy(gameObject);
-        //}
+        Vector2 laserSize = GetComponent<BoxCollider2D>().size;
+        float xLaserHalf = laserSize.x / 2;
+        float yLaserHalf = laserSize.y / 2;
 
-        //if (transform.position.x < -bulletRect.rect.width)
-        //{
-        //    Destroy(gameObject);
-        //}
+        // Right Bound
+        if ((transform.position.x - xLaserHalf) > xBGHalf)
+        {
+            Destroy(gameObject);
+        }
 
-        //if (transform.position.y < -bulletRect.rect.width)
-        //{
-        //    Destroy(gameObject);
-        //}
+        // Left Bound
+        if ((transform.position.x + xLaserHalf) < -xBGHalf)
+        {
+            Destroy(gameObject);
+        }
+
+        // Top Bound
+        if ((transform.position.y - yLaserHalf) > yBGHalf)
+        {
+            Destroy(gameObject);
+        }
+
+        // Bottom Bound
+        if ((transform.position.y + yLaserHalf) < -yBGHalf)
+        {
+            Destroy(gameObject);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

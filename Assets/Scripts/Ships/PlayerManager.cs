@@ -122,39 +122,31 @@ public class PlayerManager : BaseShip
             }
         }
 
-        Vector3 BGSize = gameManager.backgroundsFolder.GetComponent<BoxCollider2D>().size;
-        float BGHalfX = BGSize.x / 2;
-        float BGHalfY = BGSize.y / 2;
-
-        Vector3 playerSize = GetComponent<BoxCollider2D>().size;
-        float PlayerHalfX = (playerSize.x / 2) + 0.1F;
-        float PlayerHalfY = (playerSize.y / 2) + 0.1F;
-
         // Right/Center Bound
-        if ((transform.position.x + PlayerHalfX) > 0)
+        if ((transform.position.x + shipHalfX) > 0)
         {
-            transform.position = new Vector2(-PlayerHalfX, transform.position.y);
+            transform.position = new Vector2(-shipHalfX, transform.position.y);
             xSpeed = 0;
         }
 
         // Left Bound
-        if ((transform.position.x - PlayerHalfX) < -BGHalfX)
+        if ((transform.position.x - shipHalfX) < -xBGHalf)
         {
-            transform.position = new Vector2(-BGHalfX + PlayerHalfX, transform.position.y);
+            transform.position = new Vector2(-xBGHalf + shipHalfX, transform.position.y);
             xSpeed = 0;
         }
 
         // Top Bound
-        if ((transform.position.y + PlayerHalfY) > BGHalfY)
+        if ((transform.position.y + shipHalfY) > yBGHalf)
         {
-            transform.position = new Vector2(transform.position.x, BGHalfY - PlayerHalfY);
+            transform.position = new Vector2(transform.position.x, yBGHalf - shipHalfY);
             ySpeed = 0;
         }
 
         // Bottom Bound
-        if ((transform.position.y - PlayerHalfY) < -BGHalfY)
+        if ((transform.position.y - shipHalfY) < -yBGHalf)
         {
-            transform.position = new Vector2(transform.position.x, -BGHalfY + PlayerHalfY);
+            transform.position = new Vector2(transform.position.x, -yBGHalf + shipHalfY);
             ySpeed = 0;
         }
     }

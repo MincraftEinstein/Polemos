@@ -5,7 +5,7 @@ using UnityEngine;
 
 public abstract class BaseEnemy : BaseShip
 {
-    public int speed;
+    public float speed;
     public int moneyAwarded;
     public List<TurretsProps> turretsProps = new List<TurretsProps>();
 
@@ -56,6 +56,7 @@ public abstract class BaseEnemy : BaseShip
                     instance.transform.GetChild(0).transform.localScale = new Vector2(shieldTurretSize, shieldTurretSize);
                 }
             }
+
             if (hasShootingTurrets)
             {
                 StartCoroutine(FireTurretBullets());
@@ -134,20 +135,19 @@ public abstract class BaseEnemy : BaseShip
 
     protected bool IsOutOfBounds()
     {
-        Rect rect = GetComponent<RectTransform>().rect;
-        if ((transform.position.x - (rect.width / 2)) > backgroundRect.rect.width)
+        if ((transform.position.x - shipHalfX) > xBGHalf)
         {
             return true;
         }
-        else if ((transform.position.y - (rect.height / 2)) > backgroundRect.rect.height)
+        else if ((transform.position.x + shipHalfX) < -xBGHalf)
         {
             return true;
         }
-        else if ((transform.position.x + (rect.width / 2)) < 0)
+        else if ((transform.position.y - shipHalfY) > yBGHalf)
         {
             return true;
         }
-        else if ((transform.position.y + (rect.height / 2))  < 0)
+        else if ((transform.position.y + shipHalfY)  < -yBGHalf)
         {
             return true;
         }

@@ -22,24 +22,31 @@ public class EnemyManager : BaseEnemy
     protected override void Update()
     {
         base.Update();
-        transform.Translate(Vector2.left * Time.deltaTime * speed);
+        transform.Translate(speed * Time.deltaTime * Vector2.left);
 
-        if (transform.position.x > (backgroundRect.rect.width + 200))
+        float xBorder = xBGHalf + 2;
+        float yBorder = yBGHalf + 2;
+
+        // Right Bound
+        if ((transform.position.x + shipHalfX) > xBorder)
         {
             Die();
         }
 
-        if (transform.position.y > (backgroundRect.rect.height + 200))
+        // Left Bound
+        if ((transform.position.x - shipHalfX) < -xBorder)
         {
             Die();
         }
 
-        if (transform.position.x < -25)
+        // Top Bound
+        if ((transform.position.y + shipHalfY) > yBorder)
         {
             Die();
         }
 
-        if (transform.position.y < -200)
+        // Bottom Bound
+        if ((transform.position.y - shipHalfY) < -yBorder)
         {
             Die();
         }

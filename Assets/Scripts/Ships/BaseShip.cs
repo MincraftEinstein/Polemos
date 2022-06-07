@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -10,19 +11,33 @@ public abstract class BaseShip : MonoBehaviour
 
     protected int currentHealth;
     protected float explosionSize = 1;
+    protected float xBGHalf;
+    protected float yBGHalf;
+    protected float shipHalfX;
+    protected float shipHalfY;
     public GameManager gameManager;
     protected AudioSource audioSource;
     protected RectTransform backgroundRect;
     protected GameObject bulletFolder;
+    protected Vector2 BGSize;
+    protected Vector2 shipSize;
+    protected SpriteRenderer sprite;
 
     // Start is called before the first frame update
     protected virtual void Start()
     {
         gameManager = Resources.FindObjectsOfTypeAll<GameManager>()[0];
+        BGSize = gameManager.backgroundsFolder.GetComponent<BoxCollider2D>().size;
+        shipSize = GetComponent<BoxCollider2D>().size;
+        sprite = GetComponent<SpriteRenderer>();
         backgroundRect = gameManager.backgroundRect;
         bulletFolder = gameManager.bulletFolder;
         audioSource = gameManager.audioSource;
         currentHealth = health;
+        xBGHalf = BGSize.x / 2;
+        yBGHalf = BGSize.y / 2;
+        shipHalfX = (shipSize.x / 2) + 0.1F;
+        shipHalfY = (shipSize.y / 2) + 0.1F;
 
         if (health < 1)
         {
@@ -88,18 +103,17 @@ public abstract class BaseShip : MonoBehaviour
 
     protected void ChangeShipColor(Color color)
     {
-        gameObject.GetComponent<Image>().color = color;
+        sprite.color = color;
         for (int i = 0; i < transform.childCount; i++)
         {
             Transform child = transform.GetChild(i);
             if (!child.CompareTag("OrdagaExplosionTrigger"))
             {
-                child.GetComponent<Image>().color = color;
+                child.GetComponent<SpriteRenderer>().color = color;
             }
         }
     }
 
-    
     /// <summary>
     /// Incrimentaly rotates 'rotatable' towards the 'target' at the given 'speed'. Must be continisly updated.
     /// </summary>

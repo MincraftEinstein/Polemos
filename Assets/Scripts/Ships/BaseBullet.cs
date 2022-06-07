@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class BaseBullet : MonoBehaviour
 {
-    public int speed;
+    public float speed;
     public int damageAmount = 1;
     public bool isEnemyBullet;
     public Directions dirction;

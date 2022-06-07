@@ -14,7 +14,6 @@ public class RakarBoss : BaseBoss
     private bool isMoving;
     private bool isTouchingTopEdge;
     private bool isTouchingBottomEdge;
-    private bool canRunHalfHealthTask = true;
     private int direction;
     private float halfHeight;
     private RectTransform bossRect;
@@ -82,15 +81,6 @@ public class RakarBoss : BaseBoss
             else
             {
                 isTouchingBottomEdge = false;
-            }
-
-            if (currentHealth == (health / 2))
-            {
-                if (canRunHalfHealthTask)
-                {
-                    StartCoroutine(SpawnBackup());
-                    canRunHalfHealthTask = false;
-                }
             }
         }
         else
@@ -178,18 +168,5 @@ public class RakarBoss : BaseBoss
     {
         Instantiate(bullet, new Vector2(transform.position.x + position.x, transform.position.y + position.y), transform.rotation, bulletFolder.transform);
         audioSource.PlayOneShot(gunFireSound);
-    }
-
-    private IEnumerator SpawnBackup()
-    {
-        while (gameManager.gameOver == false)
-        {
-            for (int i = 0; i < 5; i++)
-            {
-                Transform spawnPoint = gameManager.enemySpawnPoints[Random.Range(0, gameManager.enemySpawnPoints.Count)];
-                Instantiate(backupEnemy, spawnPoint.position, Quaternion.identity, gameManager.enemyFolder.transform);
-            }
-            yield return new WaitForSeconds(25);
-        }
     }
 }

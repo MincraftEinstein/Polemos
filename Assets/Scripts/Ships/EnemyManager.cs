@@ -24,8 +24,8 @@ public class EnemyManager : BaseEnemy
         base.Update();
         transform.Translate(speed * Time.deltaTime * Vector2.left);
 
-        float xBorder = xBGHalf + 2;
-        float yBorder = yBGHalf + 2;
+        float xBorder = xBGHalf + 3;
+        float yBorder = yBGHalf + 3;
 
         // Right Bound
         if ((transform.position.x + shipHalfX) > xBorder)

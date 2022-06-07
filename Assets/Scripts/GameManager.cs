@@ -19,8 +19,6 @@ public class GameManager : MonoBehaviour
     public GameObject backgroundPrefab;
     public GameObject explosion;
     public GameObject dialogueBackground;
-    public GameObject bossSpawnPoint;
-    public GameObject enemySpawnPointsFolder;
     public GameObject startMenu;
     public Image overheatBar;
     public Text dialogueText;
@@ -52,8 +50,6 @@ public class GameManager : MonoBehaviour
     public int gunLevel = 0;
     [HideInInspector]
     public RectTransform backgroundRect;
-    [HideInInspector]
-    public List<Transform> enemySpawnPoints;
 
     private int money;
     private int wave;
@@ -173,8 +169,8 @@ public class GameManager : MonoBehaviour
 
     private IEnumerator UpdateWaves()
     {
-        int yPixelsPerChunk = 13;
-        int xPixelsPerChunk = 10;
+        int yPixelsPerChunk = 15;
+        int xPixelsPerChunk = 11;
         int xNumberOfChunks = levelMap.width / xPixelsPerChunk;
         int yNumberOfChunks = levelMap.height / yPixelsPerChunk;
 
@@ -186,9 +182,6 @@ public class GameManager : MonoBehaviour
                 {
                     yield return new WaitForSeconds(waveIntervals[wave]);
                     print("Starting wave " + wave);
-                    Transform g = Instantiate(enemySpawnPointsFolder, enemyFolder.transform).transform;
-                    enemySpawnPoints = new List<Transform>(g.GetComponentsInChildren<Transform>());
-                    enemySpawnPoints.Remove(g);
                     for (int y = 0; y < yPixelsPerChunk; y++)
                     {
                         for (int x = 0; x < xPixelsPerChunk; x++)
@@ -198,8 +191,6 @@ public class GameManager : MonoBehaviour
                             PixelToEnemy(levelMap, pixelX, pixelY, x, y);
                         }
                     }
-                    enemySpawnPoints.Clear();
-                    Destroy(g.gameObject);
                     wave++;
                     if (wave > (waveCount - 1))
                     {
@@ -227,7 +218,7 @@ public class GameManager : MonoBehaviour
         {
             if (spawnProps.color.Equals(pixelColor) && spawnProps.isBoss)
             {
-                GameObject bossEnemy = Instantiate(spawnProps.enemyType, bossSpawnPoint.transform.position, Quaternion.identity, enemyFolder.transform);
+                GameObject bossEnemy = Instantiate(spawnProps.enemyType, new Vector2(18, 0), Quaternion.identity, enemyFolder.transform);
                 enemyCount.Add(bossEnemy);
                 BaseEnemy bossProps = bossEnemy.GetComponent<BaseEnemy>();
                 bossProps.canFireGuns = false;
@@ -237,15 +228,9 @@ public class GameManager : MonoBehaviour
             }
             else if (spawnProps.color.b.Equals(pixelColor.b) && spawnProps.color.g.Equals(pixelColor.g))
             {
-                for (int i = 0; i < enemySpawnPoints.Count; i++)
-                {
-                    EnemySpawnPoint spawnPoint = enemySpawnPoints[i].gameObject.GetComponent<EnemySpawnPoint>();
-                    if (spawnPoint.pixelX == chunkX && spawnPoint.pixelY == chunkY)
-                    {
-                        GameObject enemy = Instantiate(spawnProps.enemyType, spawnPoint.gameObject.transform.position, Quaternion.Euler(0, 0, pixelColor.r * 255 * 5), enemyFolder.transform);
-                        enemyCount.Add(enemy);
-                    }
-                }
+                // R * 255 converts from RGB-1.0 to RGB-255.0
+                GameObject enemy = Instantiate(spawnProps.enemyType, new Vector2(chunkX + 1, chunkY - 7), Quaternion.Euler(0, 0, pixelColor.r * 255 * 5), enemyFolder.transform);
+                enemyCount.Add(enemy);
             }
         }
     }

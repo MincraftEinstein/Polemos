@@ -924,7 +924,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 10
+  m_SortingOrder: 1
   m_Sprite: {fileID: 2553938648691630368, guid: c2cca90f41f1d054491ed16b53fff0ed,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -2344,7 +2344,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 10
+  m_SortingOrder: 1
   m_Sprite: {fileID: 5965795498307291989, guid: c2cca90f41f1d054491ed16b53fff0ed,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -3369,7 +3369,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 10
+  m_SortingOrder: 1
   m_Sprite: {fileID: -6163876089950693417, guid: c2cca90f41f1d054491ed16b53fff0ed,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -8332,7 +8332,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 10
+  m_SortingOrder: 1
   m_Sprite: {fileID: 5046524451110357307, guid: c2cca90f41f1d054491ed16b53fff0ed,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -8989,7 +8989,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 10
+  m_SortingOrder: 1
   m_Sprite: {fileID: 6238293796300600760, guid: c2cca90f41f1d054491ed16b53fff0ed,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -9344,7 +9344,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 10
+  m_SortingOrder: 1
   m_Sprite: {fileID: -1966148377109840341, guid: c2cca90f41f1d054491ed16b53fff0ed,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -9586,7 +9586,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 10
+  m_SortingOrder: 1
   m_Sprite: {fileID: 7961362769962974050, guid: c2cca90f41f1d054491ed16b53fff0ed,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

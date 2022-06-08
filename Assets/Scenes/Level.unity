@@ -368,7 +368,7 @@ MonoBehaviour:
   enemyFolder: {fileID: 1480961609}
   turretBulletFolder: {fileID: 538874337}
   canvas: {fileID: 330704348}
-  player: {fileID: 1743214602}
+  player: {fileID: 383863625}
   gameOverMenu: {fileID: 1579452764}
   HUD: {fileID: 1360229512}
   backgroundPrefab: {fileID: 6801779422609192021, guid: 2971966a86664374a9d3fd3cb5135a8f,
@@ -376,9 +376,6 @@ MonoBehaviour:
   explosion: {fileID: 6879489987790728947, guid: 5e176c76d71b8714a99886cf9da12717,
     type: 3}
   dialogueBackground: {fileID: 880288169}
-  bossSpawnPoint: {fileID: 1881530904}
-  enemySpawnPointsFolder: {fileID: 4406050573344402135, guid: acbc04855acd9a440a5a7352b3410a18,
-    type: 3}
   startMenu: {fileID: 1106240646}
   overheatBar: {fileID: 1553948886}
   dialogueText: {fileID: 1842310075}
@@ -471,7 +468,6 @@ MonoBehaviour:
   overheatMax: 100
   gunLevel: 0
   backgroundRect: {fileID: 32402707}
-  enemySpawnPoints: []
 --- !u!82 &130960699
 AudioSource:
   m_ObjectHideFlags: 0

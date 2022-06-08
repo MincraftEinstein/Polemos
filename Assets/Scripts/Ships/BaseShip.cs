@@ -20,7 +20,7 @@ public abstract class BaseShip : MonoBehaviour
     protected RectTransform backgroundRect;
     protected GameObject bulletFolder;
     protected Vector2 BGSize;
-    protected Vector2 shipSize;
+    protected BoxCollider2D boxCollider;
     protected SpriteRenderer sprite;
 
     // Start is called before the first frame update
@@ -28,7 +28,7 @@ public abstract class BaseShip : MonoBehaviour
     {
         gameManager = Resources.FindObjectsOfTypeAll<GameManager>()[0];
         BGSize = gameManager.backgroundsFolder.GetComponent<BoxCollider2D>().size;
-        shipSize = GetComponent<BoxCollider2D>().size;
+        boxCollider = GetComponent<BoxCollider2D>();
         sprite = GetComponent<SpriteRenderer>();
         backgroundRect = gameManager.backgroundRect;
         bulletFolder = gameManager.bulletFolder;
@@ -36,8 +36,8 @@ public abstract class BaseShip : MonoBehaviour
         currentHealth = health;
         xBGHalf = BGSize.x / 2;
         yBGHalf = BGSize.y / 2;
-        shipHalfX = (shipSize.x / 2) + 0.1F;
-        shipHalfY = (shipSize.y / 2) + 0.1F;
+        shipHalfX = (boxCollider.size.x / 2) + 0.1F;
+        shipHalfY = (boxCollider.size.y / 2) + 0.1F;
 
         if (health < 1)
         {
@@ -120,10 +120,10 @@ public abstract class BaseShip : MonoBehaviour
     /// <param name="rotatable"></param>
     /// <param name="target"></param>
     /// <param name="speed"></param>
-    protected void RotateObjectToObject(GameObject rotatable, GameObject target, float speed)
+    protected void RotateObjectToObject(Transform rotatable, Transform target, float speed)
     {
-        float angle = Mathf.Atan2(target.transform.position.y - rotatable.transform.position.y, target.transform.position.x - rotatable.transform.position.x) * Mathf.Rad2Deg;
+        float angle = Mathf.Atan2(target.position.y - rotatable.position.y, target.position.x - rotatable.position.x) * Mathf.Rad2Deg;
         Quaternion targetRotation = Quaternion.AngleAxis(angle, Vector3.forward);
-        rotatable.transform.rotation = Quaternion.RotateTowards(rotatable.transform.rotation, targetRotation, speed * Time.deltaTime);
+        rotatable.rotation = Quaternion.RotateTowards(rotatable.rotation, targetRotation, speed * Time.deltaTime);
     }
 }

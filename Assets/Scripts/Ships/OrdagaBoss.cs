@@ -39,8 +39,8 @@ public class OrdagaBoss : BaseBoss
             GameObject point1 = teleportPointsList[i].GetChild(0).gameObject;
             GameObject point2 = teleportPointsList[i].GetChild(1).gameObject;
 
-            RotateObjectToObject(point1, point2, 100);
-            RotateObjectToObject(point2, point1, 100);
+            RotateObjectToObject(point1.transform, point2.transform, 100);
+            RotateObjectToObject(point2.transform, point1.transform, 100);
         }
 
         if (isInPosition)

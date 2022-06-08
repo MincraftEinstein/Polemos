@@ -71,7 +71,7 @@ public abstract class BaseEnemy : BaseShip
         {
             for (int i = 0; i < turrets.Count; i++)
             {
-                RotateObjectToObject(turrets[i], player, turretRotationSpeed);
+                RotateObjectToObject(turrets[i].transform, player.transform, turretRotationSpeed);
             }
         }
     }

@@ -15,8 +15,6 @@ public class RakarBoss : BaseBoss
     private bool isTouchingTopEdge;
     private bool isTouchingBottomEdge;
     private int direction;
-    private float halfHeight;
-    private RectTransform bossRect;
     private Vector2 destination;
 
     // Start is called before the first frame update
@@ -27,8 +25,6 @@ public class RakarBoss : BaseBoss
         shieldTurretHealth = 3;
         shieldRespawnInterval = 12;
         explosionSize = 3;
-        bossRect = (RectTransform)transform;
-        halfHeight = bossRect.rect.height / 2;
     }
 
     // Update is called once per frame
@@ -41,7 +37,7 @@ public class RakarBoss : BaseBoss
             {
                 if (direction == 0)
                 {
-                    transform.Translate(Vector2.up * Time.deltaTime * speed);
+                    transform.Translate(speed * Time.deltaTime * Vector2.up);
 
                     if (transform.position.y > destination.y)
                     {
@@ -51,7 +47,7 @@ public class RakarBoss : BaseBoss
                 }
                 else
                 {
-                    transform.Translate(Vector2.down * Time.deltaTime * speed);
+                    transform.Translate(speed * Time.deltaTime * Vector2.down);
 
                     if (transform.position.y < destination.y)
                     {
@@ -61,9 +57,9 @@ public class RakarBoss : BaseBoss
                 }
             }
 
-            if ((transform.position.y + halfHeight) > backgroundRect.rect.height)
+            if ((transform.position.y + shipHalfY) > yBGHalf)
             {
-                transform.position = new Vector2(transform.position.x, backgroundRect.rect.height - halfHeight);
+                transform.position = new Vector2(transform.position.x, yBGHalf - shipHalfY);
                 isMoving = false;
                 isTouchingTopEdge = true;
             }
@@ -72,9 +68,9 @@ public class RakarBoss : BaseBoss
                 isTouchingTopEdge = false;
             }
 
-            if ((transform.position.y - halfHeight) < 0)
+            if ((transform.position.y - shipHalfY) < -yBGHalf)
             {
-                transform.position = new Vector2(transform.position.x, 0 + halfHeight);
+                transform.position = new Vector2(transform.position.x, -yBGHalf + shipHalfY);
                 isMoving = false;
                 isTouchingBottomEdge = true;
             }
@@ -85,9 +81,9 @@ public class RakarBoss : BaseBoss
         }
         else
         {
-            transform.Translate(Vector2.left * Time.deltaTime * speed);
+            transform.Translate(speed * Time.deltaTime * Vector2.left);
 
-            if (transform.position.x < (backgroundRect.rect.width - (((backgroundRect.rect.width / 2) / 2) / 2)))
+            if (transform.position.x < ((xBGHalf / 4) * 3))
             {
                 isInPosition = true;
                 canFireGuns = true;
@@ -141,12 +137,11 @@ public class RakarBoss : BaseBoss
         float distance;
         if (direction == 0)
         {
-            distance = Random.Range(backgroundRect.rect.height, transform.position.y + halfHeight);
-
+            distance = Random.Range(yBGHalf, transform.position.y + shipHalfY);
         }
         else
         {
-            distance = Random.Range(0, transform.position.y - halfHeight);
+            distance = Random.Range(-yBGHalf, transform.position.y - shipHalfY);
         }
 
         destination = new Vector2(transform.position.x, distance);
@@ -158,9 +153,9 @@ public class RakarBoss : BaseBoss
     {
         while (gameManager.gameOver == false && canFireGuns)
         {
-            yield return new WaitForSeconds(Random.Range(2, 5));
             CreateBullet(leftBulletPosition);
             CreateBullet(rightBulletPosition);
+            yield return new WaitForSeconds(Random.Range(2, 5));
         }
     }
 

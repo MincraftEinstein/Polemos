@@ -45,7 +45,9 @@ public abstract class BaseEnemy : BaseShip
             bool hasShootingTurrets = false;
             for (int i = 0; i < turretsProps.Count; i++)
             {
-                GameObject instance = Instantiate(turretsProps[i].turret, new Vector2(transform.position.x + turretsProps[i].position.x, transform.position.y + turretsProps[i].position.y), Quaternion.Euler(new Vector3(transform.rotation.x, transform.rotation.y, transform.rotation.z + 180)), transform);
+                GameObject instance = Instantiate(turretsProps[i].turret, transform);
+                instance.transform.localPosition = new Vector2(turretsProps[i].position.x, turretsProps[i].position.y);
+                instance.transform.rotation = Quaternion.Euler(new Vector3(transform.rotation.x, transform.rotation.y, transform.rotation.z + 180));
                 turrets.Add(instance);
                 if (!instance.name.Contains("Shield") && hasShootingTurrets == false)
                 {

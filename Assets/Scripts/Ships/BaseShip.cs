@@ -17,7 +17,6 @@ public abstract class BaseShip : MonoBehaviour
     protected float shipHalfY;
     public GameManager gameManager;
     protected AudioSource audioSource;
-    protected RectTransform backgroundRect;
     protected GameObject bulletFolder;
     protected Vector2 BGSize;
     protected BoxCollider2D boxCollider;
@@ -30,7 +29,6 @@ public abstract class BaseShip : MonoBehaviour
         BGSize = gameManager.backgroundsFolder.GetComponent<BoxCollider2D>().size;
         boxCollider = GetComponent<BoxCollider2D>();
         sprite = GetComponent<SpriteRenderer>();
-        backgroundRect = gameManager.backgroundRect;
         bulletFolder = gameManager.bulletFolder;
         audioSource = gameManager.audioSource;
         currentHealth = health;

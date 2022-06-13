@@ -12,36 +12,22 @@ public class OrdagaBoss : BaseBoss
     private bool canCharge;
     private bool canTeleport;
     private bool canInflictCollsionDamage = true;
-    private List<Transform> teleportPointsList = new List<Transform>();
-    private Vector3 startPos;
+    private Transform points;
+    private Vector2 startPos;
 
     // Start is called before the first frame update
     protected override void Start()
     {
         base.Start();
         explosionSize = 2.5F;
-        GameObject instance = Instantiate(teleportPoints, gameManager.enemyFolder.transform.position, Quaternion.identity, gameManager.enemyFolder.transform);
-        instance.transform.SetSiblingIndex(2);
-        for (int i = 0; i < instance.transform.childCount; i++)
-        {
-            teleportPointsList.Add(instance.transform.GetChild(i));
-        }
-
         transform.rotation = Quaternion.Euler(new Vector3(transform.rotation.x, transform.rotation.y, transform.rotation.z + 180));
+        points = Instantiate(teleportPoints, gameManager.enemyFolder.transform.position, Quaternion.identity, gameManager.transform).transform;
     }
 
     // Update is called once per frame
     protected override void Update()
     {
         base.Update();
-        for (int i = 0; i < teleportPointsList.Count; i++)
-        {
-            GameObject point1 = teleportPointsList[i].GetChild(0).gameObject;
-            GameObject point2 = teleportPointsList[i].GetChild(1).gameObject;
-
-            RotateObjectToObject(point1.transform, point2.transform, 100);
-            RotateObjectToObject(point2.transform, point1.transform, 100);
-        }
 
         if (isInPosition)
         {
@@ -52,14 +38,14 @@ public class OrdagaBoss : BaseBoss
 
             if (canCharge)
             {
-                transform.Translate(Vector2.right * Time.deltaTime * chargeSpeed);
+                transform.Translate(chargeSpeed * Time.deltaTime * Vector2.right);
             }
         }
         else
         {
-            transform.Translate(Vector2.right * Time.deltaTime * speed);
+            transform.Translate(speed * Time.deltaTime * Vector2.right);
 
-            if (transform.position.x < (backgroundRect.rect.width - ((backgroundRect.rect.width / 2) / 2)))
+            if (transform.position.x < (xBGHalf / 2))
             {
                 StartCoroutine(OnceInPosition());
             }
@@ -95,13 +81,13 @@ public class OrdagaBoss : BaseBoss
         if (gameManager.gameOver == false)
         {
             canTeleport = false;
-            GameObject currentPointSet;
+            Transform currentPointSet;
 
             choosePointSet:
-            int nextPointSet = Random.Range(0, teleportPointsList.Count);
+            int nextPointSet = Random.Range(0, points.childCount);
             if (nextPointSet != lastPointSet)
             {
-                currentPointSet = teleportPointsList[nextPointSet].gameObject;
+                currentPointSet = points.GetChild(nextPointSet);
                 lastPointSet = nextPointSet;
             }
             else
@@ -109,37 +95,44 @@ public class OrdagaBoss : BaseBoss
                 goto choosePointSet;
             }
 
-            GameObject startGO = currentPointSet.transform.GetChild(Random.Range(0, 2)).gameObject;
-            startPos = startGO.transform.position;
+            int i = Random.Range(0, 2);
+            Transform startGO = currentPointSet.GetChild(i);
+            startPos = startGO.position;
             yield return new WaitForSeconds(2);
-            StartCoroutine(TemporarilyTurnOffCollider(startGO.GetComponent<BoxCollider2D>()));
+            StartCoroutine(BlinkCollider(startGO.GetComponent<BoxCollider2D>()));
             transform.SetPositionAndRotation(new Vector2(startPos.x, startPos.y), startGO.transform.rotation);
             canCharge = true;
         }
     }
 
-    private IEnumerator TemporarilyTurnOffCollider(BoxCollider2D collider2D)
+    private IEnumerator BlinkCollider(BoxCollider2D collider2D)
     {
         collider2D.enabled = false;
         yield return new WaitForSeconds(1);
         collider2D.enabled = true;
     }
 
+    protected override void OnDeath()
+    {
+        base.OnDeath();
+        Destroy(points.gameObject);
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.name.Contains("Point"))
+        GameObject collisionGO = collision.gameObject;
+        if (collisionGO.name.Contains("Point"))
         {
             canCharge = false;
             canTeleport = true;
         }
-
-        if (collision.gameObject.CompareTag("Player"))
+        if (collisionGO.CompareTag("Player"))
         {
             canFireTurrets = false;
             if (canInflictCollsionDamage)
             {
                 canInflictCollsionDamage = false;
-                collision.gameObject.GetComponent<PlayerManager>().RemoveHealth(3);
+                collisionGO.GetComponent<PlayerManager>().RemoveHealth(3);
             }
         }
     }

@@ -23,16 +23,19 @@ public class BaseBoss : BaseEnemy
 
     protected override void OnHealthRemoved()
     {
+        base.OnHealthRemoved();
         bossHealthBar.value = currentHealth;
     }
 
     protected override void OnHealthAdded()
     {
+        base.OnHealthAdded();
         bossHealthBar.value = currentHealth;
     }
 
     protected override void OnDeath()
     {
+        base.OnDeath();
         bossHealthBar.gameObject.SetActive(false);
     }
 }

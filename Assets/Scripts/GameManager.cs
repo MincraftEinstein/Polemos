@@ -48,8 +48,6 @@ public class GameManager : MonoBehaviour
     public int overheatMax = 100;
     [HideInInspector]
     public int gunLevel = 0;
-    [HideInInspector]
-    public RectTransform backgroundRect;
 
     private int money;
     private int wave;
@@ -76,7 +74,6 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         print("Loading level " + Constants.levelsUnlocked);
-        backgroundRect = new RectTransform();
         HUDElements = HUD.GetComponentsInChildren<Transform>();
         startMenu.transform.GetChild(0).GetChild(0).GetComponent<Text>().text = "Level " + Constants.levelsUnlocked;
         StartCoroutine(Overheat());

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class OrdagaBoss : BaseBoss
 {
-    public int chargeSpeed;
+    public float chargeSpeed;
     public GameObject teleportPoints;
 
     private int lastPointSet;

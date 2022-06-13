@@ -167,7 +167,7 @@ MonoBehaviour:
   health: 3
   canTakeDamage: 1
   gameManager: {fileID: 0}
-  speed: 5
+  speed: 3
   moneyAwarded: 300
   turretsProps:
   - turret: {fileID: 7564960916000155831, guid: 48f94bb7d967a0047a616b7459c209e9,

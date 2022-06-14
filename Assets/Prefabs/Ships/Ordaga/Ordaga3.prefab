@@ -167,7 +167,7 @@ MonoBehaviour:
   health: 3
   canTakeDamage: 1
   gameManager: {fileID: 0}
-  speed: 4.5
+  speed: 4
   moneyAwarded: 250
   turretsProps: []
   canFireGuns: 1

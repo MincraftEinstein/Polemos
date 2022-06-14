@@ -1365,6 +1365,8 @@ MonoBehaviour:
   health: 4
   canTakeDamage: 1
   gameManager: {fileID: 130960698}
+  maxSpeed: 18
+  speedModifier: 9
   bullet: {fileID: 7642801951221263360, guid: 4333800a546da6b4d98eeb3bc8453f99, type: 3}
   healthBar: {fileID: 1087868903}
   shieldRechargeTimer: {fileID: 348879181}
@@ -9816,6 +9818,8 @@ MonoBehaviour:
   health: 4
   canTakeDamage: 1
   gameManager: {fileID: 0}
+  maxSpeed: 50
+  speedModifier: 0
   bullet: {fileID: 2786342596386088450, guid: 746ea31070b68c244a9b9728296f1221, type: 3}
   healthBar: {fileID: 1087868903}
   shieldRechargeTimer: {fileID: 348879181}

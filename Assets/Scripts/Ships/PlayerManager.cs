@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class PlayerManager : BaseShip
 {
+    public float maxSpeed;
+    public float speedModifier;
     public GameObject bullet;
     public GameObject healthBar;
     public GameObject shieldRechargeTimer;
@@ -21,9 +23,6 @@ public class PlayerManager : BaseShip
     private bool isShieldRecharging;
     private float xSpeed = 0;
     private float ySpeed = 0;
-    private float maxSpeed = 50;
-    private float acceleration = 20;
-    private float deceleration = 20;
     private int healthLevel = 0;
     private int regenerationLevel = 0;
     private int damage = 1;
@@ -49,21 +48,21 @@ public class PlayerManager : BaseShip
 
             if (Input.GetKey(KeyCode.A) && (xSpeed < maxSpeed))
             {
-                xSpeed -= acceleration * Time.deltaTime;
+                xSpeed -= speedModifier * Time.deltaTime;
             }
             else if (Input.GetKey(KeyCode.D) && (xSpeed > -maxSpeed))
             {
-                xSpeed += acceleration * Time.deltaTime;
+                xSpeed += speedModifier * Time.deltaTime;
             }
             else
             {
-                if (xSpeed > deceleration * Time.deltaTime)
+                if (xSpeed > speedModifier * Time.deltaTime)
                 {
-                    xSpeed -= deceleration * Time.deltaTime;
+                    xSpeed -= speedModifier * Time.deltaTime;
                 }
-                else if (xSpeed < -deceleration * Time.deltaTime)
+                else if (xSpeed < -speedModifier * Time.deltaTime)
                 {
-                    xSpeed += deceleration * Time.deltaTime;
+                    xSpeed += speedModifier * Time.deltaTime;
                 }
                 else
                 {
@@ -73,21 +72,21 @@ public class PlayerManager : BaseShip
 
             if (Input.GetKey(KeyCode.S) && (ySpeed < maxSpeed))
             {
-                ySpeed -= acceleration * Time.deltaTime;
+                ySpeed -= speedModifier * Time.deltaTime;
             }
             else if (Input.GetKey(KeyCode.W) && (ySpeed > -maxSpeed))
             {
-                ySpeed += acceleration * Time.deltaTime;
+                ySpeed += speedModifier * Time.deltaTime;
             }
             else
             {
-                if (ySpeed > deceleration * Time.deltaTime)
+                if (ySpeed > speedModifier * Time.deltaTime)
                 {
-                    ySpeed -= deceleration * Time.deltaTime;
+                    ySpeed -= speedModifier * Time.deltaTime;
                 }
-                else if (ySpeed < -deceleration * Time.deltaTime)
+                else if (ySpeed < -speedModifier * Time.deltaTime)
                 {
-                    ySpeed += deceleration * Time.deltaTime;
+                    ySpeed += speedModifier * Time.deltaTime;
                 }
                 else
                 {
@@ -244,8 +243,8 @@ public class PlayerManager : BaseShip
                 {
                     speedUpgrades[0].SetActive(false);
                     speedUpgrades[parsed].SetActive(true);
-                    maxSpeed += parsed * 50;
-                    acceleration += parsed * 50;
+                    maxSpeed += parsed * 2;
+                    speedModifier += parsed;
                 }
                 else if (upgrade[0] == "regeneration")
                 {
